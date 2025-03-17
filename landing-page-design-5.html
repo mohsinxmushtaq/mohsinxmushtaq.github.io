@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - Clean Square Buttons</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            background-color: #f4f7f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+            padding: 50px 30px;
+        }
+        
+        .title {
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: #333;
+            font-weight: 300;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0;
+            width: 180px;
+            height: 180px;
+            background-color: white;
+            color: #333;
+            border: none;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            backface-visibility: hidden;
+            padding: 20px;
+        }
+        
+        .btn-front {
+            transform: rotateY(0deg);
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .btn-back {
+            transform: rotateY(180deg);
+            color: white;
+        }
+        
+        .btn:hover .btn-front {
+            transform: rotateY(180deg);
+        }
+        
+        .btn:hover .btn-back {
+            transform: rotateY(0deg);
+        }
+        
+        /* Color schemes for each button */
+        .btn:nth-child(1):hover .btn-back {
+            background-color: #e74c3c;
+        }
+        
+        .btn:nth-child(2):hover .btn-back {
+            background-color: #3498db;
+        }
+        
+        .btn:nth-child(3):hover .btn-back {
+            background-color: #2ecc71;
+        }
+        
+        .background-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#ddd 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        
+        @media (max-width: 700px) {
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                height: 120px;
+            }
+            
+            .title {
+                margin-bottom: 40px;
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-pattern"></div>
+    
+    <div class="container">
+        <h1 class="title">Welcome</h1>
+        
+        <div class="buttons">
+            <button class="btn">
+                <div class="btn-content btn-front">
+                    <span>Products</span>
+                </div>
+                <div class="btn-content btn-back">
+                    <span>Explore Our Products</span>
+                </div>
+            </button>
+            
+            <button class="btn">
+                <div class="btn-content btn-front">
+                    <span>Services</span>
+                </div>
+                <div class="btn-content btn-back">
+                    <span>View Our Services</span>
+                </div>
+            </button>
+            
+            <button class="btn">
+                <div class="btn-content btn-front">
+                    <span>Contact</span>
+                </div>
+                <div class="btn-content btn-back">
+                    <span>Get In Touch</span>
+                </div>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
